@@ -6,43 +6,26 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ eyebrow, title, description }: SectionHeadingProps) {
   return (
-    <div style={{ marginBottom: '2rem' }}>
+    <div className="mb-10">
       {eyebrow ? (
-        <p
-          style={{
-            margin: 0,
-            marginBottom: '0.75rem',
-            color: '#7dd3fc',
-            fontSize: '0.75rem',
-            fontWeight: 700,
-            letterSpacing: '0.16em',
-            textTransform: 'uppercase',
-          }}
-        >
+        <p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-sky-400">
           {eyebrow}
         </p>
       ) : null}
+
       <h2
-        style={{
-          margin: 0,
-          fontSize: 'clamp(2rem, 4vw, 3rem)',
-          lineHeight: 1.1,
-          letterSpacing: '-0.06em',
-          color: '#e2e8f0',
-        }}
+        aria-label={title}
+        className="m-0 text-3xl font-black tracking-[-0.06em] text-slate-50 md:text-4xl lg:text-5xl"
       >
-        {title}
+        {title.split(' ').map((word, index) => (
+          <span key={`${word}-${index}`} className="heading-word" aria-hidden="true">
+            {word}
+          </span>
+        ))}
       </h2>
+
       {description ? (
-        <p
-          style={{
-            margin: '1rem 0 0',
-            maxWidth: '48rem',
-            color: '#94a3b8',
-            fontSize: '1.05rem',
-            lineHeight: 1.7,
-          }}
-        >
+        <p className="mt-4 max-w-3xl text-base leading-7 text-slate-300 md:text-lg">
           {description}
         </p>
       ) : null}

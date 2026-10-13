@@ -1,46 +1,99 @@
 import { profile } from '../data/content'
-import { Button } from '../components/Button'
+import { ParticleField } from '../components/ParticleField'
 
-export function Hero() {
+type HeroProps = {
+  active: boolean
+}
+
+export function Hero({ active }: HeroProps) {
   return (
-    <section id="top" className="mx-auto max-w-6xl px-5 pb-14 pt-16 md:pt-20">
-      <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-        <div>
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.2em] text-sky-400">
+    <section id="top" className="section-panel hero-panel">
+      <ParticleField active={active} />
+      <div className="hero-layout">
+        <div className="hero-copy">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.22em] text-sky-400">
             Available for opportunities
           </p>
-          <h1 className="m-0 text-5xl font-black tracking-[-0.08em] text-slate-50 md:text-7xl">
-            {profile.name}
+
+          <h1 aria-label={profile.name} className="m-0 text-5xl font-black tracking-[-0.08em] text-slate-50 md:text-6xl xl:text-7xl">
+            {profile.name.split(' ').map((word, index) => (
+              <span key={`${word}-${index}`} className="heading-word" aria-hidden="true">
+                {word}
+              </span>
+            ))}
           </h1>
-          <p className="mt-4 text-xl font-semibold text-sky-400 md:text-2xl">{profile.role}</p>
-          <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">{profile.intro}</p>
+
+          <p className="mt-4 max-w-2xl text-lg font-medium text-sky-300 md:text-xl">
+            {profile.role}
+          </p>
+
+          <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">
+            I’m Pablo Brito, a Junior Front-End Developer and Information Technology Engineering student based in El Salvador. I build modern websites for real clients and enjoy turning ideas into useful digital experiences.
+          </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
-            <a href="#projects" className="no-underline">
-              <Button variant="primary">View Projects</Button>
+            <a href="#projects" className="inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-3 text-sm font-semibold text-slate-950 no-underline shadow-[0_10px_30px_rgba(56,189,248,0.25)] transition hover:bg-sky-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+              Explore My Projects
             </a>
-            <a href={profile.cvPath} download className="no-underline">
-              <Button variant="secondary">Download CV</Button>
+            <a href="#contact" className="inline-flex items-center justify-center rounded-full border border-slate-300/30 bg-slate-900/60 px-5 py-3 text-sm font-semibold text-slate-100 no-underline transition hover:border-sky-400/60 hover:bg-slate-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+              Contact Me
             </a>
+            <details className="relative">
+              <summary className="list-none cursor-pointer rounded-full border border-sky-500/40 bg-sky-500/10 px-5 py-3 text-sm font-semibold text-sky-200 outline-none transition hover:border-sky-300 hover:bg-sky-500/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
+                Download CV
+              </summary>
+
+              <div className="absolute left-0 top-full z-20 mt-2 w-52 overflow-hidden rounded-2xl border border-slate-700 bg-slate-900/95 text-slate-100 shadow-2xl shadow-slate-950/50">
+                {profile.cvDownloads.map((option) =>
+                  option.disabled ? (
+                    <span
+                      key={option.label}
+                      aria-disabled="true"
+                      className="block cursor-not-allowed px-4 py-3 text-sm text-slate-400"
+                    >
+                      {option.label}
+                    </span>
+                  ) : (
+                    <a
+                      key={option.label}
+                      href={option.href}
+                      download={option.fileName}
+                      className="block px-4 py-3 text-sm text-sky-300 no-underline transition hover:bg-sky-500/10"
+                    >
+                      {option.label}
+                    </a>
+                  ),
+                )}
+              </div>
+            </details>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-5 text-sm text-slate-200">
-            <a href={profile.github} target="_blank" rel="noreferrer" className="text-slate-200 no-underline hover:text-sky-300">
+          <div className="mt-8 flex flex-wrap items-center gap-5 text-sm text-slate-200">
+            <a href={profile.github} target="_blank" rel="noreferrer" className="no-underline text-slate-200 hover:text-sky-300">
               GitHub
             </a>
-            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-slate-200 no-underline hover:text-sky-300">
+            <a href={profile.linkedin} target="_blank" rel="noreferrer" className="no-underline text-slate-200 hover:text-sky-300">
               LinkedIn
             </a>
+            <span className="rounded-full border border-emerald-400/25 bg-emerald-400/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.14em] text-emerald-300">
+              Remote-friendly
+            </span>
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl border border-slate-800 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-8 shadow-2xl shadow-sky-950/30">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(125,211,252,0.2),_transparent_35%)]" />
-          <div className="relative z-10 flex min-h-[260px] flex-col items-center justify-center text-center">
-            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-sky-400 to-violet-500 text-2xl font-bold text-slate-950 shadow-[0_0_40px_rgba(125,211,252,0.35)]">
-              P
-            </div>
-            <p className="m-0 max-w-sm text-base leading-7 text-slate-200">{profile.availability}</p>
+        <div className="hero-portrait">
+          <div className="hero-art" role="img" aria-label="Pablo Brito monogram artwork">
+            <span className="hero-art-orbit hero-art-orbit-one" aria-hidden="true" />
+            <span className="hero-art-orbit hero-art-orbit-two" aria-hidden="true" />
+            <span className="hero-art-glow" aria-hidden="true" />
+            <span className="hero-art-monogram" aria-hidden="true">PB</span>
+            <span className="hero-art-cross hero-art-cross-one" aria-hidden="true">+</span>
+            <span className="hero-art-cross hero-art-cross-two" aria-hidden="true">+</span>
+          </div>
+
+          <div className="hero-availability">
+            <p className="m-0 text-xs font-bold uppercase tracking-[0.18em] text-sky-300">Availability</p>
+            <p className="mt-2 m-0 leading-7 text-slate-200">{profile.availability}</p>
           </div>
         </div>
       </div>

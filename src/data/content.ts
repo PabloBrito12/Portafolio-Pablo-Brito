@@ -32,38 +32,53 @@ export type SocialLink = {
 export const profile = {
   name: 'Pablo Brito',
   fullName: 'Pablo Antonio Brito Elías',
-  role: 'Junior Front-End Developer',
+  role: 'Junior Front-End Developer | Information Technology Engineering Student',
   location: 'San Salvador, El Salvador',
-  intro:
-    'Building thoughtful web experiences, one project at a time.',
+  intro: 'Building thoughtful, responsive web experiences.',
   summary:
-    'I am a junior front-end developer focused on creating clean, responsive, and human-centered web experiences. I combine practical experience in a tech company with a strong interest in user interfaces, web development, and continuous learning.',
-  availability: 'Open to remote opportunities in El Salvador and international LATAM teams.',
-  email: 'pablo.brito.dev@example.com',
-  github: 'https://github.com/',
-  linkedin: 'https://www.linkedin.com/',
-  cvPath: '/Pablo_Brito_CV.pdf',
+    'I am a Junior Front-End Developer and Information Technology Engineering student based in El Salvador. I work on responsive interfaces, real client projects, and digital experiences that balance clarity, usability, and visual polish.',
+  availability:
+    'Open to junior front-end roles, internships, and remote opportunities.',
+  email: 'pablobrito.elias@gmail.com',
+  github: 'https://github.com/PabloBrito12',
+  linkedin: 'https://www.linkedin.com/in/pablo-brito-143b28208/',
+  portfolio: 'https://portafolio-pablo-brito.vercel.app/',
+  cvPath: '/Pablo_Brito_CV_EN.pdf',
+  cvDownloads: [
+    {
+      label: 'English CV',
+      href: '/Pablo_Brito_CV_EN.pdf',
+      fileName: 'Pablo_Brito_Resume_EN.pdf',
+      disabled: false,
+    },
+    {
+      label: 'Spanish CV',
+      href: '/Pablo_Brito_CV_ES.pdf',
+      fileName: 'Pablo_Brito_CV_ES.pdf',
+      disabled: false,
+    },
+  ],
 }
 
 export const experience: ExperienceItem[] = [
   {
-    role: 'Internship Trainee',
+    role: 'Junior Front-End Developer',
     company: 'Tecnologías Trust Me',
-    period: '6 months',
+    period: 'February 2026 – April 2026',
     description: [
-      'Supported digital communication and social media activities for the company.',
-      'Collaborated with client outreach and business communication tasks.',
-      'Gained practical exposure to a technology environment and web-related work.',
+      'Contributed to front-end development for websites and user-oriented interfaces.',
+      'Supported the implementation and refinement of web pages based on project requirements.',
+      'Worked with a practical, client-focused approach to improve usability and visual quality.',
     ],
   },
   {
-    role: 'Junior Front-End Developer',
+    role: 'Internship Trainee',
     company: 'Tecnologías Trust Me',
-    period: '3 months',
+    period: 'August 2025 – January 2026',
     description: [
-      'Participated in front-end tasks for website development work.',
-      'Contributed to user interfaces and web pages in a professional environment.',
-      'Worked alongside a team in a real technology project context.',
+      'Supported digital communication and social media activities for the company.',
+      'Assisted with initial outreach to potential clients and tasks related to web projects.',
+      'Gained hands-on experience in a technology environment while supporting real business and digital work.',
     ],
   },
 ]
@@ -73,46 +88,57 @@ export const projects: Project[] = [
     name: 'Smile Factory',
     category: 'Dental Clinic Website',
     shortDescription:
-      'A professional dental clinic website focused on trust, clarity and service presentation.',
+      'A professional dental clinic website designed to build trust and make services easy to understand.',
     longDescription:
-      'This project was developed for a real client in the dental sector. The goal was to present the clinic and its services with a professional digital presence that could help potential patients understand the offer quickly and clearly.',
+      'This project was developed for a real dental clinic client. The goal was to present services, trust signals, and key patient information in a polished and accessible format for prospective clients.',
     technologies: ['HTML5', 'CSS3', 'JavaScript'],
     demoUrl: 'https://smileeefactory.com/',
-    sourceUrl: undefined,
     contribution:
-      'Designed and implemented the front-end structure, content presentation, and user experience for a service-focused landing page.',
+      'I developed the client-facing front end, including the structure, content flow, and user experience for a professional clinic landing page.',
     status: 'Live',
-    imageLabel: 'Smile Factory website preview',
+    imageLabel: 'Smile Factory',
   },
   {
-    name: 'E-commerce Store',
-    category: 'E-commerce Website',
+    name: 'Melissa Velásquez CV Website',
+    category: 'Professional Profile Website',
     shortDescription:
-      'A product-focused storefront designed to communicate value and support browsing decisions.',
+      'A clean personal website created to present a professional profile with clarity and polish.',
     longDescription:
-      'This project was created to showcase an online store interface with a clear shopping experience. The main focus was product presentation, navigation clarity, and a streamlined layout that supports digital commerce UX.',
+      'This project was built for a real client as a professional profile website. The emphasis was on presenting experience, strengths, and contact information in a way that feels credible and easy to navigate.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    demoUrl: undefined,
-    sourceUrl: undefined,
+    demoUrl: 'https://melissavelasquezweb.vercel.app/',
     contribution:
-      'Built the storefront structure, product presentation flow, and responsive interface with a strong emphasis on usability and visual consistency.',
-    status: 'In progress',
-    imageLabel: 'E-commerce store preview placeholder',
+      'I developed the project for the client, creating the interface and presentation structure for a confident and professional online profile.',
+    status: 'Live',
+    imageLabel: 'Melissa Velásquez',
   },
   {
-    name: 'Personal Portfolio',
-    category: 'CV Website',
+    name: 'Clothing E-commerce Website',
+    category: 'E-commerce Front-End Contribution',
     shortDescription:
-      'A personal portfolio designed to present professional experience, projects and contact information.',
+      'An online store interface where I contributed to front-end development during my internship period.',
     longDescription:
-      'This portfolio is a more polished and complete version of my online presence. The goal is to present my profile, experience and work in a way that is easy to navigate and relevant for recruiters and teams looking for junior front-end talent.',
+      'This e-commerce project was developed as part of a larger application, and my contribution focused on the front-end experience. I supported product presentation, layout consistency, and interface usability while working within a larger team environment.',
     technologies: ['React', 'TypeScript', 'Tailwind CSS'],
-    demoUrl: undefined,
-    sourceUrl: undefined,
+    demoUrl: 'https://tr.ee/e_Bcw7gXM',
     contribution:
-      'Designed and developed a personal digital presence focused on clarity, project presentation, and professional positioning.',
-    status: 'In progress',
-    imageLabel: 'Personal portfolio preview placeholder',
+      'I contributed to the front end by helping shape the store interface and user flow, without claiming full ownership of the whole application.',
+    status: 'Live',
+    imageLabel: 'E-commerce UI',
+  },
+  {
+    name: 'GitHub',
+    category: 'Code & Repositories',
+    shortDescription:
+      'A place to explore my code, experiments, and ongoing work in front-end development and web projects.',
+    longDescription:
+      'My GitHub profile reflects the projects I build, iterate on, and improve over time. It is a practical record of my learning process, implementation work, and technical progress as a developer.',
+    technologies: ['GitHub', 'React', 'JavaScript'],
+    demoUrl: 'https://github.com/PabloBrito12',
+    contribution:
+      'I use GitHub to share code, document my work, and continue improving my front-end development practice through real projects and iterations.',
+    status: 'Live',
+    imageLabel: 'GitHub Profile',
   },
 ]
 
@@ -130,34 +156,25 @@ export const techGroups = [
     items: ['SQL', 'PostgreSQL', 'SQL Server'],
   },
   {
-    title: 'Languages',
-    items: ['Java', 'Python'],
+    title: 'Tools & additional technologies',
+    items: ['Git', 'GitHub', 'Docker', 'Vercel', 'Visual Studio Code', 'Java', 'JavaFX'],
   },
   {
-    title: 'Tools',
-    items: ['Git', 'GitHub', 'Docker', 'Vercel', 'Visual Studio Code'],
-  },
-  {
-    title: 'Currently learning',
-    items: ['Advanced React patterns', 'UI/UX polish', 'AI-assisted development'],
+    title: 'Additional experience',
+    items: ['Responsive web design', 'AI-assisted development', 'Python'],
   },
 ]
 
 export const education: EducationItem[] = [
   {
     institution: 'Universidad Centroamericana José Simeón Cañas (UCA)',
-    degree: 'Ingeniería Informática',
-    detail: 'Second year university student',
+    degree: 'Information Technology Engineering',
+    detail: 'Expected graduation: 2030',
   },
   {
     institution: 'Colegio Champagnat',
-    degree: 'Bachillerato General',
-    detail: 'Completed secondary education',
-  },
-  {
-    institution: 'ITCA-FEPADE',
-    degree: 'English course',
-    detail: 'English training and conversation support',
+    degree: 'General High School Diploma',
+    detail: 'Completed in 2024',
   },
 ]
 
@@ -171,7 +188,7 @@ export const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Tech Stack', href: '#tech-stack' },
+  { label: 'Skills', href: '#tech-stack' },
   { label: 'Education', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ]

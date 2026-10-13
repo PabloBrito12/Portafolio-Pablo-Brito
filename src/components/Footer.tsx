@@ -1,4 +1,4 @@
-import { profile } from '../data/content'
+import { navItems, profile } from '../data/content'
 
 const currentYear = new Date().getFullYear()
 
@@ -11,10 +11,18 @@ export function Footer() {
           <p className="mt-1 text-sm text-slate-400">© {currentYear}</p>
         </div>
 
-        <div className="flex flex-wrap gap-4 text-sm text-slate-300">
-          <a href="#top" className="no-underline hover:text-sky-300">Back to top</a>
-          <a href={profile.github} target="_blank" rel="noreferrer" className="no-underline hover:text-sky-300">GitHub</a>
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="no-underline hover:text-sky-300">LinkedIn</a>
+        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-300">
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} className="no-underline hover:text-sky-300">
+              {item.label}
+            </a>
+          ))}
+          <a href={profile.github} target="_blank" rel="noreferrer" className="no-underline hover:text-sky-300">
+            GitHub
+          </a>
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" className="no-underline hover:text-sky-300">
+            LinkedIn
+          </a>
         </div>
       </div>
     </footer>

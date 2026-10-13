@@ -3,41 +3,40 @@ import { SectionHeading } from '../components/SectionHeading'
 
 export function About() {
   return (
-    <section id="about" style={{ padding: '4rem 1.25rem', maxWidth: '1180px', margin: '0 auto' }}>
+    <section id="about" className="section-panel">
       <SectionHeading
         eyebrow="About me"
         title="Building better interfaces with curiosity and discipline."
-        description="I am a student of Computer Engineering at UCA, with professional experience in a technology company and a strong interest in front-end development, web interfaces, and learning by building."
+        description="I develop front-end experiences that are useful, responsive, and easy for real users to trust and navigate."
       />
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '2rem', alignItems: 'stretch' }}>
-        <div
-          style={{
-            border: '1px solid rgba(148, 163, 184, 0.2)',
-            background: 'rgba(15, 23, 42, 0.7)',
-            borderRadius: '1.5rem',
-            padding: '2rem',
-          }}
-        >
-          <p style={{ margin: 0, color: '#cbd5e1', fontSize: '1.05rem', lineHeight: 1.8 }}>
+      <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="rounded-[1.75rem] border border-slate-800 bg-slate-900/70 p-7 shadow-lg shadow-slate-950/20">
+          <p className="m-0 text-base leading-8 text-slate-300 md:text-lg">
             {profile.summary}
           </p>
         </div>
 
-        <div
-          style={{
-            border: '1px solid rgba(148, 163, 184, 0.2)',
-            background: 'linear-gradient(135deg, rgba(125, 211, 252, 0.1), rgba(139, 92, 246, 0.1))',
-            borderRadius: '1.5rem',
-            minHeight: '220px',
-            display: 'grid',
-            placeItems: 'center',
-            color: '#f8fafc',
-            fontSize: '1.2rem',
-            fontWeight: 700,
-          }}
-        >
-          Profile snapshot
+        <div className="rounded-[1.75rem] border border-sky-500/20 bg-gradient-to-br from-sky-500/10 via-slate-900 to-violet-500/10 p-6">
+          <p className="mb-4 text-xs font-bold uppercase tracking-[0.18em] text-sky-300">Profile snapshot</p>
+          <ul className="m-0 list-none space-y-3 p-0 text-sm text-slate-200 md:text-base">
+            <li className="flex items-start gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-400" />
+              <span>Based in San Salvador, El Salvador.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-400" />
+              <span>Focused on responsive, modern front-end development.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-400" />
+              <span>Studying Information Technology Engineering at UCA.</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-1 h-2.5 w-2.5 rounded-full bg-sky-400" />
+              <span>Open to remote, hybrid, and international collaboration.</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

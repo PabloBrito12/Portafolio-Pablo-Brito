@@ -3,45 +3,32 @@ import { SectionHeading } from '../components/SectionHeading'
 
 export function Experience() {
   return (
-    <section id="experience" style={{ padding: '4rem 1.25rem', maxWidth: '1180px', margin: '0 auto' }}>
+    <section id="experience" className="section-panel">
       <SectionHeading
         eyebrow="Experience"
         title="Professional growth in a real technology environment."
+        description="My experience at Tecnologías Trust Me reflects a clear progression from support and digital communication work to front-end development responsibilities."
       />
 
-      <div style={{ display: 'grid', gap: '1.2rem' }}>
+      <div className="grid gap-5">
         {experience.map((item, index) => (
           <article
             key={`${item.role}-${item.company}`}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '160px 1fr',
-              gap: '1.5rem',
-              padding: '1.5rem 1.25rem',
-              border: '1px solid rgba(148, 163, 184, 0.2)',
-              borderRadius: '1.25rem',
-              background: 'rgba(15, 23, 42, 0.7)',
-            }}
+            className="grid gap-5 rounded-[1.75rem] border border-slate-800 bg-slate-900/70 p-5 md:grid-cols-[180px_1fr] md:p-7"
           >
-            <div
-              style={{
-                color: '#7dd3fc',
-                fontWeight: 700,
-                fontSize: '0.8rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-              }}
-            >
-              {index === 0 ? '2025' : '2026'}
-              <div style={{ marginTop: '0.5rem', color: '#cbd5e1' }}>{item.period}</div>
+            <div className="pt-1">
+              <p className="m-0 text-xs font-bold uppercase tracking-[0.2em] text-sky-400">
+                {index === 0 ? '2026' : '2025'}
+              </p>
+              <p className="mt-3 text-sm text-slate-300">{item.period}</p>
             </div>
 
             <div>
-              <h3 style={{ margin: 0, color: '#f8fafc', fontSize: '1.5rem' }}>{item.role}</h3>
-              <p style={{ margin: '0.5rem 0 1rem', color: '#7dd3fc', fontWeight: 600 }}>{item.company}</p>
-              <ul style={{ margin: 0, paddingLeft: '1.2rem', color: '#cbd5e1', lineHeight: 1.8 }}>
+              <h3 className="m-0 text-2xl font-bold text-slate-50">{item.role}</h3>
+              <p className="mt-2 mb-4 text-base font-semibold text-sky-300">{item.company}</p>
+              <ul className="m-0 space-y-2 pl-5 text-base leading-7 text-slate-300">
                 {item.description.map((point) => (
-                  <li key={point}>{point}</li>
+                  <li key={point} className="marker:text-sky-400">{point}</li>
                 ))}
               </ul>
             </div>

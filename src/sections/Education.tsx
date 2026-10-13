@@ -3,26 +3,21 @@ import { SectionHeading } from '../components/SectionHeading'
 
 export function Education() {
   return (
-    <section id="education" style={{ padding: '4rem 1.25rem', maxWidth: '1180px', margin: '0 auto' }}>
+    <section id="education" className="section-panel">
       <SectionHeading
         eyebrow="Education"
-        title="Academic background and language training."
+        title="Academic background with a focus on technology and growth."
       />
 
-      <div style={{ display: 'grid', gap: '1rem' }}>
+      <div className="grid gap-5">
         {education.map((item) => (
           <article
             key={item.institution}
-            style={{
-              border: '1px solid rgba(148, 163, 184, 0.2)',
-              borderRadius: '1.25rem',
-              background: 'rgba(15, 23, 42, 0.7)',
-              padding: '1.25rem 1.5rem',
-            }}
+            className="rounded-[1.5rem] border border-slate-800 bg-slate-900/70 p-5 md:p-6"
           >
-            <h3 style={{ margin: 0, color: '#f8fafc', fontSize: '1.3rem' }}>{item.institution}</h3>
-            <p style={{ margin: '0.7rem 0 0.2rem', color: '#7dd3fc', fontWeight: 700 }}>{item.degree}</p>
-            <p style={{ margin: 0, color: '#cbd5e1' }}>{item.detail}</p>
+            <h3 className="m-0 text-xl font-bold text-slate-50 md:text-2xl">{item.institution}</h3>
+            <p className="mt-3 mb-2 text-base font-semibold text-sky-300">{item.degree}</p>
+            <p className="m-0 text-slate-300">{item.detail}</p>
           </article>
         ))}
       </div>
